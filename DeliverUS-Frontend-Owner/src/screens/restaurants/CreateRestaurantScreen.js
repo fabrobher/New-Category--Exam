@@ -187,6 +187,26 @@ export default function CreateRestaurantScreen ({ navigation }) {
               }
                 style={styles.imagePicker}
               >
+
+        <Pressable
+            onPress={() => navigation.navigate('CreateCategoryScreen')
+            }
+            style={({ pressed }) => [
+              {
+                backgroundColor: pressed
+                  ? GlobalStyles.brandBlueTap
+                  : GlobalStyles.brandBlue
+              },
+              styles.button
+            ]}>
+          <View style={[{ flex: 1, flexDirection: 'row', justifyContent: 'center' }]}>
+            <MaterialCommunityIcons name='folder-plus-outline' color={'white'} size={20}/>
+            <TextRegular textStyle={styles.text}>
+              Create new category
+            </TextRegular>
+          </View>
+        </Pressable>
+
                 <TextRegular>Logo: </TextRegular>
                 <Image style={styles.image} source={values.logo ? { uri: values.logo.assets[0].uri } : restaurantLogo} />
               </Pressable>
